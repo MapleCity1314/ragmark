@@ -1,0 +1,10 @@
+{
+  "extends": "@ragmark/typescript-config/base.json",
+  "compilerOptions": {
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "allowJs": true
+  },
+  "include": ["*.js"],
+  "exclude": ["node_modules", "dist"]
+}
