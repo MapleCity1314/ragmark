@@ -37,5 +37,20 @@ yarn-error.log*
 .DS_Store
 *.pem
 
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.uv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+htmlcov/
+.coverage
+*.db
+data/
+
 #skills
 skills-lock.json
