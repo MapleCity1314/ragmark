@@ -7,7 +7,6 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from src.api.router import api_router
-from src.config import get_settings
 from src.db.session import create_db_and_tables
 from src.middleware.correlation import CorrelationMiddleware
 from src.middleware.error_handler import register_exception_handlers
@@ -17,8 +16,7 @@ from src.utils.logger import logger
 
 @asynccontextmanager
 async def lifespan(app: FastAPI) -> Any:  # noqa: ARG001
-    settings = get_settings()
-    logger.info("starting_up", environment=settings.environment)
+    logger.info("starting_up")
     await create_db_and_tables()
     yield
     logger.info("shutting_down")

@@ -16,6 +16,6 @@ def test_agent_executor_not_implemented() -> None:
         AgentExecutor()
 
 
-def test_default_tools_not_implemented() -> None:
+def test_agent_tools_not_implemented() -> None:
     with pytest.raises(NotImplementedError):
         get_default_tools()

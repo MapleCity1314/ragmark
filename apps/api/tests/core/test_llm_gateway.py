@@ -1,10 +1,8 @@
 from __future__ import annotations
 
-from src.core.llm.models import TokenUsage
+from src.core.llm.models import Provider
 
 
-def test_token_usage_defaults() -> None:
-    usage = TokenUsage()
-    assert usage.input_tokens == 0
-    assert usage.output_tokens == 0
-    assert usage.total_tokens == 0
+def test_provider_enum_values() -> None:
+    assert Provider.OPENAI == "openai"
+    assert Provider.ANTHROPIC == "anthropic"

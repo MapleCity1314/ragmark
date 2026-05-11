@@ -2,15 +2,19 @@ from __future__ import annotations
 
 from langchain_chroma import Chroma
 from langchain_core.documents import Document
+from langchain_core.embeddings import Embeddings
+from langchain_openai import OpenAIEmbeddings
 
 from src.config import get_settings
-from src.core.rag.embeddings import create_embeddings
 
 
 class VectorStoreManager:
-    def __init__(self) -> None:
+    def __init__(self, embeddings: Embeddings | None = None) -> None:
         settings = get_settings()
-        self._embeddings = create_embeddings(settings)
+        self._embeddings = embeddings or OpenAIEmbeddings(
+            api_key=settings.openai_api_key,
+            model="text-embedding-3-small",
+        )
         self._persist_dir = settings.chroma_persist_dir
         self._collections: dict[str, Chroma] = {}
 
