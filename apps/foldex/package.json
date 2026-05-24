@@ -1,0 +1,31 @@
+{
+  "name": "@ragmark/foldex",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "build": "tsc",
+    "lint": "eslint .",
+    "check-types": "tsc --noEmit",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.25.1",
+    "@mozilla/readability": "^0.6.0",
+    "jsdom": "^25.0.1",
+    "turndown": "^7.2.1",
+    "zod": "^4"
+  },
+  "devDependencies": {
+    "@ragmark/eslint-config": "workspace:*",
+    "@ragmark/typescript-config": "workspace:*",
+    "@types/jsdom": "^21.1.7",
+    "@types/node": "^20",
+    "@types/turndown": "^5.0.6",
+    "eslint": "^9",
+    "tsx": "^4.21.0",
+    "typescript": "^5",
+    "vitest": "^4"
+  }
+}
